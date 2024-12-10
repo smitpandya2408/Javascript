@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="text"></div>
+    <div id="text2"></div>
+    <div id="text3"></div>
+    <script>
+      let text = document.getElementById("text");
+      let text2 = document.getElementById("text2");
+      let text3 = document.getElementById("text3");
+      let sum = 15 * 3;
+      let a = 10,
+        b = 10;
+      let result = 75;
+      let result2;
+      if (result >= 75) {
+        result2 = "passed";
+      } else {
+        result2 = "failed";
+      }
+      text.innerHTML = `<h1>${sum}</h1>`;
+      text2.innerHTML = `<h2>Addition of two numbers:${a + b}</h2>`;
+      text3.innerHTML = `<h3>${result2}<\h3>`;
+    </script>
+  </body>
+</html>
