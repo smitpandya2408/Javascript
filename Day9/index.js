@@ -131,16 +131,30 @@
 // });
 // console.log(storeSome, "some");
 
-let reduceData = [10, 20, 30, 40, [1, 2, 3, [6, 15, [1, 2, 33]]]];
+// let reduceData = [10, 20, 30, 40, [1, 2, 3, [6, 15, [1, 2, 33]]]];
 
-const storeReduceData = reduceData.reduce((acc, element) => {
-  if (typeof element == "number") {
-    acc = [...acc, element];
-  } else {
-    acc = [...acc, ...element];
-  }
+// const storeReduceData = reduceData.reduce((acc, element) => {
+//   if (typeof element == "number") {
+//     acc = [...acc, element];
+//   } else {
+//     acc = [...acc, ...element];
+//   }
 
-  return acc;
-}, []);
+//   return acc;
+// }, []);
 
-console.log(storeReduceData, "flat");
+// console.log(storeReduceData, "flat");
+
+// String Functions
+
+let str = "Mozilla";
+
+console.log(str.substr(1, 2));
+console.log(str.substr(2));
+
+let str2 = "   Hello World    ";
+
+console.log(str2.trim());
+
+let str3 = ["smit", "chndravadanbhai", "pandya"];
+console.log(str3.join("-"));
