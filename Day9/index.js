@@ -52,25 +52,95 @@
 
 // calculate(5, 10, sum);
 
-// let month = ["jan", "march", "april", "june"];
-// month.splice(1, 0, "feb");
-// console.log(month);
+//splice
 
-// let map1 = new Map();
-// map1.set("a", 1);
-// map1.set("b", 2);
-// map1.set("c", 3);
-// console.log(map1.get("a"));
+// let dataofnumbers = [24, 28, 25, 30, 31, 32, 33, 34, 35, 36, 37];
+// let string2 = "javascript";
+// dataofnumbers.splice(3, 4, "hello", "smit pandya");
+// console.log(dataofnumbers);
 
-let words = ["spray", "elite", "exuberant", "destruction", "present"];
-const result = words.filter((word) => word.length > 6);
-console.log(result);
+//slice
+// let dataofnumbers = [24, 28, 25, 30, 31, 32, 33, 34, 35, 36, 37];
+// let result = dataofnumbers.slice(0, 2);
+// console.log(result);
 
-console.log(words.indexOf("spray"));
-console.log;
+//mapping
+// let datauser = ["smit", "Dhruv", "Raj", "Om"];
+// first map create new array internally
+// second update element in new array
+// third return new array
 
-const array1 = [5, 12, 8, 130, 44];
+// let result = datauser.map((element) => {
+//   return element + " " + "Pandya";
+// });
 
-const isLargeNumber = (element) => element > 13;
+// console.log(result);
 
-console.log(array1.findIndex(isLargeNumber));
+// filter
+// let numbersData = [12,14,15,17,18,19,20,21,22,23,24,25]
+
+// const storeNumbers = numbersData.filter((element)=>{
+//   return element > 20
+// })
+
+// console.log(storeNumbers);
+
+// for each
+// let sum = 0;
+// const storeForEach = numbersData.forEach((element) => {
+//   console.log(element);
+//   sum += element;
+// });
+// console.log(sum);
+// console.log(storeForEach);
+
+//findIndex
+
+// const newValue = numbersData.indexOf(24)
+// console.log(newValue)
+
+// const findIndex = numbersData.findIndex((element)=>element>24)
+
+// console.log(findIndex)
+
+//includes
+// let techStack = [
+//   "react",
+//   "node",
+//   "html",
+//   "css",
+//   "mongodb",
+//   "vercel",
+//   "netlify",
+//   "javascript",
+// ]; //["node","node","node","css"]
+
+// const resultStack = techStack.includes("css");
+
+// console.log(resultStack);
+
+//every
+// const storeEvery = techStack.every((element) => {
+//   return element == "node";
+// });
+// console.log(storeEvery);
+
+//some
+// const storeSome = techStack.some((element) => {
+//   return element == "javascript";
+// });
+// console.log(storeSome, "some");
+
+let reduceData = [10, 20, 30, 40, [1, 2, 3, [6, 15, [1, 2, 33]]]];
+
+const storeReduceData = reduceData.reduce((acc, element) => {
+  if (typeof element == "number") {
+    acc = [...acc, element];
+  } else {
+    acc = [...acc, ...element];
+  }
+
+  return acc;
+}, []);
+
+console.log(storeReduceData, "flat");
