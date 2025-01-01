@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <form action="">
+        <tr>
+          <td>Email</td>
+          <td>
+            <input
+              type="text"
+              id="email"
+              placeholder="enter the email"
+              onkeyup="emailvalidation()"
+            /><br />
+          </td>
+          <td><p id="error1"></p></td>
+        </tr>
+
+        <tr>
+          <td>Password</td>
+          <td>
+            <input
+              type="text"
+              id="pass"
+              placeholder="enter the password"
+              onkeyup="password()"
+            /><br />
+          </td>
+          <td><p id="error2"></p></td>
+        </tr>
+
+        <tr>
+          <td>Date</td>
+          <td>
+            <input
+              type="date"
+              id="date"
+              placeholder="enter the date"
+              onkeyup="date()"
+            /><br />
+          </td>
+          <td><p id="error3"></p></td>
+        </tr>
+
+        <tr>
+          <td>Gender</td>
+          <td>
+            <input
+              type="radio"
+              id="gender_male"
+              name="gender"
+              value="Male"
+            />Male
+            <input
+              type="radio"
+              id="gender_female"
+              name="gender"
+              value="Female"
+            />Female
+          </td>
+          <td><p id="error4"></p></td>
+        </tr>
+
+        <tr>
+          <td>Hobbies</td>
+          <td>
+            <input type="checkbox" id="hobby_cricket" />Cricket<br />
+            <input type="checkbox" id="hobby_football" />Football<br />
+            <input type="checkbox" id="hobby_music" />Music<br />
+          </td>
+          <td><p id="error5"></p></td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <button id="btn" type="button" onclick="submitForm()">
+              Submit
+            </button>
+          </td>
+        </tr>
+      </form>
+    </table>
+
+    <script>
+      let error1 = document.getElementById("error1");
+      let error2 = document.getElementById("error2");
+      let error3 = document.getElementById("error3");
+      let error4 = document.getElementById("error4");
+      let error5 = document.getElementById("error5");
+
+      function emailvalidation() {
+        let email = document.getElementById("email");
+
+        if (email.value == "") {
+          error1.innerHTML = "Please enter valid email address";
+          error1.style.color = "red";
+        } else {
+          error1.innerHTML = "";
+        }
+      }
+
+      function password() {
+        let pass = document.getElementById("pass");
+
+        if (pass.value == "") {
+          error2.innerHTML = "Please enter valid password ";
+          error2.style.color = "red";
+        } else {
+          error2.innerHTML = "";
+        }
+      }
+
+      function date() {
+        let date = document.getElementById("date");
+        if (date.value == "") {
+          error3.innerHTML = "Please enter a date";
+          error3.style.color = "red";
+          return false;
+        } else {
+          error3.innerHTML = "";
+          return true;
+        }
+      }
+
+      function validateCheckbox() {
+        const cricket = document.getElementById("hobby_cricket");
+        const football = document.getElementById("hobby_football");
+        const music = document.getElementById("hobby_music");
+
+        if (!cricket.checked && !football.checked && !music.checked) {
+          error5.innerHTML = "Please select at least one hobby.";
+          error5.style.color = "red";
+          return false;
+        } else {
+          error5.innerHTML = "";
+          return true;
+        }
+      }
+
+      function submitForm() {
+        emailvalidation();
+        password();
+        date();
+        validateCheckbox();
+
+        if (
+          error1.innerHTML === "" &&
+          error2.innerHTML === "" &&
+          error3.innerHTML === "" &&
+          error4.innerHTML === "" &&
+          error5.innerHTML === ""
+        ) {
+          alert("Form submitted successfully!");
+        } else {
+          alert("Please fix the errors before submitting.");
+        }
+      }
+    </script>
+  </body>
+</html>
