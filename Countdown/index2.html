@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 50px;
+      }
+      #timer {
+        font-size: 48px;
+        font-weight: bold;
+        color: #ff4500;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Countdown Timer</h1>
+    <div id="timer">10</div>
+
+    <script>
+      let countdownTime = 10;
+      const timerElement = document.getElementById("timer");
+
+      function updateTimer() {
+        timerElement.innerHTML = countdownTime;
+        if (countdownTime > 0) {
+          countdownTime--;
+        } else {
+          clearInterval(timerInterval);
+          timerElement.innerHTML = "Time's up!";
+        }
+      }
+
+      // Update the timer every 1 second
+      const timerInterval = setInterval(updateTimer, 1000);
+    </script>
+  </body>
+</html>
